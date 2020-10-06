@@ -1,0 +1,27 @@
+<template>
+  <div id="app">
+    <!-- 路由容器 基于slot进行封装的 根据url路径显示不同的路由组件 -->
+    <router-view></router-view>
+    <Tabber></Tabber>
+  </div>
+</template>
+
+<script>
+import Tabber from "@/components/Tabber";
+export default {
+  components: {
+    Tabber,
+  },
+};
+</script>
+
+<style lang="scss">
+* {
+  padding: 0;
+  margin: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+</style>
