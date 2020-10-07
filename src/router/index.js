@@ -38,12 +38,20 @@ const routes = [
   {
     path: "/center",
     component: Center,
+    // beforeEnter(to, from, next) {
+    //   console.log("进入Center了哦...");
+    //   next();
+    // },
   },
   {
     name: "detail",
     path: "/detail/:id", //路由动态传参
     component: Detail,
     props: true,
+  },
+  {
+    path: "/login",
+    component: () => import("@views/Login"),
   },
   {
     path: "/",
@@ -59,5 +67,37 @@ const router = new VueRouter({
   mode: "history", //默认是hash模式
   routes,
 });
+
+//全局路由守卫
+//全局路由的前置守卫
+// to:Route即将进入的目标
+// from:Route当前导航正要离开的路由
+// router.beforeEach((to, from, next) => {
+//   if (from.path === "/cinema") {
+//     console.log("从影院这边过来的哦。。。");
+//   }
+//   next(); //一定需要调用next
+// });
+
+// 全局的后置路由守卫
+// router.afterEach((to, from) => {
+//   if (to.path === "/center") {
+//     console.log("进入center了哦...");
+//   }
+// });
+
+//判断每次路由切换的时候，是否有token令牌 全局拦截
+// router.beforeEach((to, from, next) => {
+//   if (to.path === "/center") {
+//     if (localStorage.getItem("token")) {
+//       //说明用户已经登录了
+//       next();
+//     } else {
+//       next("/login"); //如果用户没有登录直接跳转到登录界面进行用户登录
+//     }
+//   } else {
+//     next();
+//   }
+// });
 
 export default router;

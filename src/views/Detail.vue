@@ -11,6 +11,9 @@ export default {
     // console.log(this.$route.query.title);
     console.log(this.id);
   },
+  // beforeRouteUpdate(to, from, next) {
+  //   console.log("detail---beforeRouteUpdate...");
+  // },
 };
 </script>
 
