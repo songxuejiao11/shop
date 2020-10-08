@@ -51,7 +51,7 @@ const routes = [
   },
   {
     path: "/login",
-    component: () => import("@views/Login"),
+    component: () => import("@/views/Login"),
   },
   {
     path: "/",

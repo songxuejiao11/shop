@@ -18,8 +18,10 @@
         :to="nav.path"
         tag="li"
         active-class="active"
-        >{{ nav.title }}</router-link
       >
+        <i class="iconfont" :class="nav.icon"></i>
+        <span>{{ nav.title }}</span>
+      </router-link>
     </ul>
   </nav>
 </template>
@@ -29,9 +31,9 @@ export default {
   data() {
     return {
       navlist: [
-        { id: 1, title: "电影", path: "/films" },
-        { id: 2, title: "影院", path: "/cinema" },
-        { id: 3, title: "个人", path: "/center" },
+        { id: 1, title: "电影", path: "/films", icon: "icon-dianying" },
+        { id: 2, title: "影院", path: "/cinema", icon: "icon-yingyuan" },
+        { id: 3, title: "个人", path: "/center", icon: "icon-wode" },
       ],
     };
   },
@@ -47,12 +49,15 @@ nav {
   left: 0px;
   bottom: 0px;
   width: 100%;
-  height: 30px;
+  height: 50px;
   ul {
     display: flex;
     text-align: center;
     li {
       flex: 1;
+      line-height: 25px;
+      display: flex;
+      flex-direction: column;
     }
   }
 }
